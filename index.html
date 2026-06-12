@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Carbono Zero - Agrinho</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <div class="folha-decorativa f1">🍃</div>
+    <div class="folha-decorativa f2">🌱</div>
+
+    <div class="container animate-fade-in">
+        <header class="header-site">
+            <div class="selo-agrinho">PROJETO AGRINHO 2026</div>
+            <h1> Desafio Carbono Zero</h1>
+            <p>Monitore o impacto ambiental do seu maquinário e conquiste medalhas de sustentabilidade!</p>
+        </header>
+
+        <main class="formulario-card">
+            <div class="form-group">
+                <label for="combustivel">⛽ Tipo de Combustível</label>
+                <select id="combustivel">
+                    <option value="diesel">Diesel Comum (Mais Poluente)</option>
+                    <option value="biodiesel">Biodiesel (Mais Sustentável)*</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="consumo">🚜 Consumo (L/Hora)</label>
+                    <input type="number" id="consumo" placeholder="Ex: 15" value="15">
+                </div>
+
+                <div class="form-group">
+                    <label for="horas">⏱️ Horas Trabalhadas</label>
+                    <input type="number" id="horas" placeholder="Ex: 100">
+                </div>
+            </div>
+
+            <button class="btn-principal" onclick="calcularDesafio()">Analisar Minha Lavoura ✨</button>
+        </main>
+
+        <div id="resultado" class="hidden card-resultado animate-bounce-in">
+            <hr class="divisor-estilizado">
+            
+            <div class="painel-gamificacao">
+                <h3>Sua Classificação Ecológica</h3>
+                <div id="badgeNota" class="badge">A</div>
+                <p id="statusMensagem"></p>
+            </div>
+
+            <div class="grid-dados">
+                <div class="dado-item">
+                    <span class="dado-icone">💨</span>
+                    <div>
+                        <h4>Pegada de Carbono</h4>
+                        <p id="emissaoTexto"></p>
+                    </div>
+                </div>
+                <div class="dado-item">
+                    <span class="dado-icone">🌳</span>
+                    <div>
+                        <h4>Compensação</h4>
+                        <p id="arvoresTexto"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="dicas-container">
+                <h3>🛠️ Missões para Melhorar sua Nota</h3>
+                <ul id="listaDicas"></ul>
+            </div>
+
+            <footer class="rodape-card">
+                <small>* O biodiesel reduz a pegada de carbono por ser uma fonte renovável.</small>
+            </footer>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
