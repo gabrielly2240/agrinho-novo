@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio Carbono Zero - Agrinho</title>
+    <title>Desafio Carbono Zero</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,10 +16,22 @@
 
     <div class="container animate-fade-in">
         <header class="header-site">
-            <div class="selo-agrinho">PROJETO AGRINHO 2026</div>
-            <h1> Desafio Carbono Zero</h1>
-            <p>Monitore o impacto ambiental do seu maquinário e conquiste medalhas de sustentabilidade!</p>
+            <h1>Desafio Carbono Zero</h1>
+            <p>Monitore o impacto ambiental do seu maquinário, conquiste medalhas e descubra como tornar sua propriedade uma referência sustentável.</p>
         </header>
+
+        <section class="info-rapida-grid">
+            <div class="info-card">
+                <span class="info-icon">🌍</span>
+                <h3>O que é CO₂?</h3>
+                <p>É o gás carbônico liberado pela queima de combustíveis. Em excesso, ele acelera as mudanças climáticas.</p>
+            </div>
+            <div class="info-card">
+                <span class="info-icon">💰</span>
+                <h3>Crédito Verde</h3>
+                <p>Propriedades que poluem menos e plantam árvores podem valorizar seus produtos e receber incentivos sustentáveis.</p>
+            </div>
+        </section>
 
         <main class="formulario-card">
             <div class="form-group">
@@ -52,6 +64,10 @@
                 <h3>Sua Classificação Ecológica</h3>
                 <div id="badgeNota" class="badge">A</div>
                 <p id="statusMensagem"></p>
+                
+                <div class="barra-progresso-container">
+                    <div id="barraProgresso" class="barra-progresso"></div>
+                </div>
             </div>
 
             <div class="grid-dados">

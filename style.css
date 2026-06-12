@@ -6,6 +6,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* O FUNDO CONTINUA IGUAL */
 body {
     background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #ffe0b2 100%);
     background-attachment: fixed;
@@ -39,7 +40,7 @@ body {
 .container {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    max-width: 600px;
+    max-width: 650px; /* Aumentado ligeiramente para os novos cards */
     width: 100%;
     border-radius: 24px;
     padding: 40px 30px;
@@ -52,24 +53,11 @@ body {
 /* Cabeçalho */
 .header-site {
     text-align: center;
-    margin-bottom: 30px;
-}
-
-.selo-agrinho {
-    background: #2e7d32;
-    color: white;
-    display: inline-block;
-    padding: 4px 14px;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-    box-shadow: 0 4px 10px rgba(46,125,32,0.2);
+    margin-bottom: 25px;
 }
 
 .header-site h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #1b5e20;
     font-weight: 700;
     margin-bottom: 8px;
@@ -78,6 +66,51 @@ body {
 .header-site p {
     color: #558b2f;
     font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* NOVO: Estilização dos Cards Informativos Superiores */
+.info-rapida-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 480px) {
+    .info-rapida-grid { grid-template-columns: 1fr; }
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px dashed #a5d6a7;
+    padding: 15px;
+    border-radius: 14px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    background: #ffffff;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.info-card h3 {
+    font-size: 0.9rem;
+    color: #1b5e20;
+    margin-bottom: 4px;
+}
+
+.info-card p {
+    font-size: 0.75rem;
+    color: #666;
+    line-height: 1.4;
 }
 
 /* Formulário e Inputs */
@@ -148,10 +181,6 @@ body {
     box-shadow: 0 8px 20px rgba(46,125,50,0.4);
 }
 
-.btn-principal:active {
-    transform: translateY(0);
-}
-
 /* Área de Resultados */
 .hidden {
     display: none;
@@ -195,6 +224,27 @@ body {
 .nota-a { background: linear-gradient(135deg, #4caf50, #1b5e20); }
 .nota-c { background: linear-gradient(135deg, #ffb300, #f57c00); }
 .nota-e { background: linear-gradient(135deg, #e53935, #b71c1c); }
+
+/* NOVO: Barra de Progresso Visual */
+.barra-progresso-container {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    height: 10px;
+    width: 80%;
+    margin: 15px auto 0 auto;
+    overflow: hidden;
+}
+
+.barra-progresso {
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
+.progresso-a { width: 100%; background: #4caf50; }
+.progresso-c { width: 60%; background: #ffb300; }
+.progresso-e { width: 20%; background: #e53935; }
 
 /* Grid de Informações Técnicas */
 .grid-dados {
@@ -264,14 +314,9 @@ body {
     color: #757575;
 }
 
-/* Animações de Entrada */
-.animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-}
-
-.animate-bounce-in {
-    animation: bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-}
+/* Animações */
+.animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+.animate-bounce-in { animation: bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }

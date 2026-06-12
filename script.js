@@ -12,7 +12,6 @@ function calcularDesafio() {
     const totalCO2 = consumo * horas * fatorEmissao;
     const arvoresNecessarias = Math.ceil(totalCO2 / 15);
 
-    // Ajustado para o novo layout em grid
     document.getElementById('emissaoTexto').innerHTML = `<strong>${totalCO2.toFixed(1)} kg</strong>`;
     document.getElementById('arvoresTexto').innerHTML = `<strong>${arvoresNecessarias} árvores</strong>`;
 
@@ -25,13 +24,18 @@ function definirRankEcolgico(co2, combustivel) {
     const badge = document.getElementById('badgeNota');
     const statusMsg = document.getElementById('statusMensagem');
     const listaDicas = document.getElementById('listaDicas');
+    const barraProgresso = document.getElementById('barraProgresso');
     
     listaDicas.innerHTML = "";
+    // Reseta classes antigas da barra de progresso
+    barraProgresso.className = "barra-progresso"; 
+    
     let missoes = [];
 
     if (co2 < 200) {
         badge.innerText = "A";
         badge.className = "badge nota-a";
+        barraProgresso.classList.add("progresso-a");
         statusMsg.innerHTML = "🏆 <strong>Guardião da Terra!</strong> Seu impacto é super baixo. Parabéns!";
         missoes = [
             "<strong>Missão Multiplicador:</strong> Compartilhe seus métodos eficientes com outros produtores regionais.",
@@ -40,6 +44,7 @@ function definirRankEcolgico(co2, combustivel) {
     } else if (co2 >= 200 && co2 <= 1000) {
         badge.innerText = "C";
         badge.className = "badge nota-c";
+        barraProgresso.classList.add("progresso-c");
         statusMsg.innerHTML = "🌱 <strong>Produtor Consciente.</strong> Boa pontuação, mas dá para otimizar o maquinário.";
         missoes = [
             "<strong>Missão Pneus Calibrados:</strong> Monitore a pressão semanalmente para economizar até 4% de combustível.",
@@ -48,11 +53,12 @@ function definirRankEcolgico(co2, combustivel) {
     } else {
         badge.innerText = "E";
         badge.className = "badge nota-e";
+        barraProgresso.classList.add("progresso-e");
         statusMsg.innerHTML = "⚠️ <strong>Alerta de Emissões!</strong> Seus gastos de CO₂ estão elevados.";
         missoes = [
             "<strong>Missão Filtro Novo:</strong> Filtros obstruídos aumentam o consumo de combustível drasticamente. Troque-os!",
             "<strong>Missão GPS Agrícola:</strong> Planeje rotas para evitar sobreposição de passadas e desperdício de tempo rodando.",
-            "<strong>Compensação Ambiental:</strong> Separe uma área de APP para plantio de mudas nativas da sua região."
+            "<strong>Compensação Ambiental:</strong> Separe uma área para plantio de mudas nativas da sua região."
         ];
     }
 
